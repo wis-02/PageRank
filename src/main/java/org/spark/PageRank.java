@@ -22,7 +22,7 @@ public class PageRank {
             System.err.println("Usage: PageRank <inputpath> <outputpath> <number_of_iterations>");
             System.exit(1);
         }*/
-        SparkConf sparkConf = new SparkConf().setMaster("local").setAppName("PageRank");
+        SparkConf sparkConf = new SparkConf().setMaster("local").setAppName("PageRank").set("spark.driver.memory", "3g");
         JavaSparkContext sc = new JavaSparkContext(sparkConf);
 
         // Load input file. In format: 
